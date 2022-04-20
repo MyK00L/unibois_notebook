@@ -24,4 +24,8 @@ myloop:
 	for(auto &i:g[p]) if(!ch[i]) cd(i,ch[p]+1,p);
 }
 // cd(0,1,-1)
+// doing a dfs starting from every p0 and only visiting nodes with ch[i]>ch[p0] is nlogn
+// you can do stuff like count number of paths of lenght k on a tree or avoid rerooting a dp
+// lca(u,v) in centroid tree is on path(u,v) in original tree,
+// you can use this to count stuff by considering O(logn) ancestors on centroid tree for both queries/updates
 
