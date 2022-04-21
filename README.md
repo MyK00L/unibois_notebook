@@ -1,2 +1,3 @@
 # unibois_notebook
-my notebook for ICPC
+UNIBOis's notebook for ICPC.
+ty myk00l
