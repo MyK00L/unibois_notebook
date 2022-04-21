@@ -1,4 +1,3 @@
-#include "../template.cpp"
 const int MN = 100005;
 vector<int> g[MN]; // graph with bidirectional adjlist
 int siz[MN]; // size of subtree

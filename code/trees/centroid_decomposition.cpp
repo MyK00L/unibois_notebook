@@ -1,4 +1,3 @@
-#include "../template.cpp"
 const int MN = 200005;
 vector<int> g[MN]; // normal bidirectional adjlist
 int cf[MN]; // parent in centroid tree
