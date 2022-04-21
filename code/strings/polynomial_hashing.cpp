@@ -1,3 +1,10 @@
+// Reminder: make at least two hashstrings if
+// you want to avoid collisions
+
+// values in P need to be larger than |alphabet|
+const ll Ps[] = {27509, 83339, 3659, 47521};
+const ll Qs[] = {1e9+7, 1e9+9, 1e9+21, 1e9+33};
+
 template<ll P, ll Q>
 struct hashstring {
 	vector<int> h;
