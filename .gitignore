@@ -1,2 +1,8 @@
 *.out
+notebook_compiler
+layout_maker
+config.ron
+layout.txt
+out.tex
+out.pdf
 
