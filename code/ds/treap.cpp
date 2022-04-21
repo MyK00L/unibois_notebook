@@ -1,5 +1,5 @@
 /* Implicit Treap (BBST)
-  can be augmented or used as map/set
+  can be augmented or used as sparse array
   O(logN) expected queries */
 
 // srand(time(0));
