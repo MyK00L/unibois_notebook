@@ -1,6 +1,6 @@
 // Fenwick tree with lower bound.
 // All operations are fast and O(logN).
-// Build is O(N). 
+// Build is O(N).
 // Trick: use map/umap to make it sparse,
 // for an extra log.
 
