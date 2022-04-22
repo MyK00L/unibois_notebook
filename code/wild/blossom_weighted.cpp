@@ -1,22 +1,24 @@
 // ty @ koosaga
 // https://github.com/koosaga/../matching_weighted_dense.cpp
 
+const ll LLINF = 1e18;
+
 // N^3 (but fast in practice)
 static const int INF = INT_MAX;
 static const int N = 514;
 struct edge{
-	int u,v,w; edge(){}
-	edge(int ui,int vi,int wi)
+	int u,v; ll w; edge(){}
+	edge(int ui,int vi,ll wi)
 		:u(ui),v(vi),w(wi){}
 };
 int n,n_x;
 edge g[N*2][N*2];
-int lab[N*2];
+ll lab[N*2];
 int match[N*2],slack[N*2],st[N*2],pa[N*2];
 int flo_from[N*2][N+1],S[N*2],vis[N*2];
 vector<int> flo[N*2];
 queue<int> q;
-int e_delta(const edge &e){
+ll e_delta(const edge &e){
 	return lab[e.u]+lab[e.v]-g[e.u][e.v].w*2;
 }
 void update_slack(int u,int x){
@@ -150,7 +152,7 @@ bool matching(){
 					}else update_slack(u,st[v]);
 				}
 		}
-		int d=INF;
+		ll d=LLINF;
 		for(int b=n+1;b<=n_x;++b)
 			if(st[b]==b&&S[b]==1)d=min(d,lab[b]/2);
 		for(int x=1;x<=n_x;++x)
@@ -184,7 +186,7 @@ pair<long long,int> solve(){
 	int n_matches=0;
 	long long tot_weight=0;
 	for(int u=0;u<=n;++u)st[u]=u,flo[u].clear();
-	int w_max=0;
+	ll w_max=0;
 	for(int u=1;u<=n;++u)
 		for(int v=1;v<=n;++v){
 			flo_from[u][v]=(u==v?u:0);
@@ -197,12 +199,12 @@ pair<long long,int> solve(){
 			tot_weight+=g[u][match[u]].w;
 	return make_pair(tot_weight,n_matches);
 }
-void add_edge( int ui , int vi , int wi ){
+void add_edge( int ui , int vi , ll wi ){
 	g[ui][vi].w = g[vi][ui].w = wi;
 }
-void init( int _n ){
-	n = _n;
-	for(int u=1;u<=n;++u)
-		for(int v=1;v<=n;++v)
-			g[u][v]=edge(u,v,0);
-}
+// void init( int _n ){
+// 	n = _n;
+// 	for(int u=1;u<=n;++u)
+// 		for(int v=1;v<=n;++v)
+// 			g[u][v]=edge(u,v, 0);
+// }
