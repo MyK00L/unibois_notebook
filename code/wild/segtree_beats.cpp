@@ -1,0 +1,1 @@
+// Segtree beats basic approach
