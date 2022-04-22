@@ -1,3 +1,5 @@
+// farthest points in a convex polygon
+
 double polygonDiameter(vector<PT> &p) {
   int n=SZ(p);
   if(n<2) return 0;
